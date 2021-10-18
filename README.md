@@ -58,6 +58,6 @@ div > a > span > .blue {
 ```
 
 ### A:
-1.`color: #ccaadd` is redundant in `.header.large` as it inherits `.header`
-2. in `.box` there's no need to define all the margins one by one since they share the same value. 
-3. `>` selector is for element. `div > a > span > .blue` mixed element and class selectors. It should be `div > a > span.blue` 
+1. `color: #ccaadd` is redundant in `.header.large` as it inherits `.header`
+2.  in `.box` there's no need to define all the margins one by one since they share the same value. 
+3.  `>` selector is for element. `div > a > span > .blue` mixed element and class selectors. It should be `div > a > span.blue` 
