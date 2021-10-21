@@ -171,6 +171,20 @@ async function getConversations() {
        return item;
      });
    );
+   ```
 
-  
+## Q6: What would you give as a feedback for a pull request including this code?
 
+```
+Account.prototype.increaseBalance = function(amount, isCredit) {
+  if (!isCredit) {
+    this.debitBalance += amount;
+  } else {
+    this.creditBalance += amount;
+  }
+};
+```
+
+### A:
+1. `amount` should be positive by context, but there's no check for it.
+2. It seems amount is a `Number` instance. Not a good idea to use `Number` to handle money values.
