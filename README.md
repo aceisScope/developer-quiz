@@ -154,7 +154,7 @@ async function getConversations() {
 
 ### A:
 1. `u` is not defined and also a bad variable naming. Also all the path variables should be `const`.
-2. The `then()` chaining for the `fetch()` is wrong since `await` pauses the execution until the promise is fulfilled. The code can be fixed as
+2. The `then()` chaining for the `fetch()` is not a good practice since `await` pauses the execution until the promise is fulfilled. The code can be fixed as
    ```
    const response = await fetch(u + convsPath);
    const conversations = await response.json();
@@ -187,4 +187,4 @@ Account.prototype.increaseBalance = function(amount, isCredit) {
 
 ### A:
 1. `amount` should be positive by context, but there's no check for it.
-2. It seems amount is a `Number` instance. Not a good idea to use `Number` to handle money values.
+2. It seems `amount` is a `Number` instance. If I'd choose I wouldn't use `Number` to handle money values but would use something like [Decimal.js](https://mikemcl.github.io/decimal.js/) instead.
